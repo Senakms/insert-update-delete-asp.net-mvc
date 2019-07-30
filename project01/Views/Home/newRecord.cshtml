@@ -1,0 +1,51 @@
+﻿@model project01.ViewModel.recorModel
+@{
+    ViewBag.Title = "newRecord";
+}
+
+<h2>New Record</h2>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("newRecord", "Home", FormMethod.Post))
+        {
+            // @Html.HiddenFor(k => k.Id)
+            @Html.LabelFor(k => k.NameSurname)<br />
+            @Html.TextBoxFor(k => k.NameSurname, new { @class = "for-control" })
+            @Html.ValidationMessageFor(k => k.NameSurname, null, new { @class = "text-danger" })
+            <br />
+            @Html.LabelFor(k => k.Email)<br />
+            @Html.TextBoxFor(k => k.Email, new { @class = "for-control" })
+            @Html.ValidationMessageFor(k => k.Email, null, new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(k => k.Age)<br />
+            @Html.TextBoxFor(k => k.Age, new { @class = "for-control" })
+            @Html.ValidationMessageFor(k => k.Age, null, new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(k => k.Gsm)<br />
+            @Html.TextBoxFor(k => k.Gsm, new { @class = "for-control" })
+            @Html.ValidationMessageFor(k => k.Gsm, null, new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(k => k.Address)<br />
+            @Html.TextBoxFor(k => k.Address, new { @class = "for-control" })
+            @Html.ValidationMessageFor(k => k.Address, null, new { @class = "text-danger" })
+            <br />
+
+            @Html.LabelFor(k => k.City)<br />
+            @Html.TextBoxFor(k => k.City, new { @class = "for-control" })
+            @Html.ValidationMessageFor(k => k.City, null, new { @class = "text-danger" })   <br />
+
+            <input type="submit" value="Record" class="btn btn-success" />
+
+            if (ViewBag.result != null)
+            {
+                <div class="alert alert-success">@ViewBag.result</div>
+            }
+        }
+
+    </div>
+</div>
+
+
